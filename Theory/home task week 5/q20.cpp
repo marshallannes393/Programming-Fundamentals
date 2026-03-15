@@ -2,11 +2,17 @@
 using namespace std;
 
 int main() {
-    for (int i = 3; i >= 1; i--) {
-        for (int j = i; j >= 1; j--) {
-            cout << j << " ";
-        }
-        cout << endl;
-    }
-    return 0;
+   int x ;
+cout << "enter no";
+cin >> x;
+for (int i = 0;i <= x;i++)
+{
+	for (int j = 0;j < i;j++)
+	{
+		cout << x - j << " ";
+	}
+	cout << endl;
+}
+
+   return 0;
 }
