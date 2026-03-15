@@ -1,14 +1,15 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int main() {
-    char going;
-    cout << "Are your friends going? (Press y for yes): "; 
-    cin >> going; 
+    int speed;
+    cout << "Speed: "; 
+cin >> speed;
 
-    if (going == 'y') { 
-        cout << "You are also going" << endl; 
+    if (speed > 100) {
+        cout << "Halt challan incomming" << endl; // [cite: 323, 325]
+    } else {
+        cout << "Perfect! You're going good." << endl; // [cite: 325]
     }
-
     return 0;
 }

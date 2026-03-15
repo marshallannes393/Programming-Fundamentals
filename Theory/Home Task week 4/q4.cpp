@@ -1,16 +1,25 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int main() {
-    int cost;
-    cout << "Enter the cost of the dress: "; 
-    cin >> cost; 
+    int red, white, tulips;
+    double original, discounted;
 
-    if (cost < 1500) { 
-        cout << "Buy the dress" << endl; 
-    } else { 
-        cout << "Do not buy the dress" << endl; 
+    cout << "Red Rose: "; 
+cin >> red;
+    cout << "White Rose: "; 
+cin >> white;
+    cout << "Tulips: "; 
+cin >> tulips;
+
+    original = (red * 2.00) + (white * 4.10) + (tulips * 2.50);
+
+    if (original > 200) {
+        discounted = original - (original * 0.20); 
+        cout << "Original Price: " << original << endl;
+        cout << "Price after Discount: " << discounted << endl;
+    } else {
+        cout << "Original Price: " << original << endl;
     }
-
     return 0;
 }
