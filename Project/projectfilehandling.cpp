@@ -21,7 +21,7 @@ int main()
     string itemCategories[MAX];
     string categories[MAX];
     int categoryItemCounts[MAX];
-    
+
     int choice;
 
     while (true)
@@ -45,9 +45,9 @@ int main()
         {
             int itemCount = 0;
             int categoryCount = 0;
-            
+
             loadData(itemNames, itemPrices, itemCategories, itemCount, categories, categoryItemCounts, categoryCount);
-            
+
             viewItems(itemNames, itemPrices, itemCategories, itemCount, categories, categoryItemCounts, categoryCount);
         }
         else if (choice == 3)
@@ -110,7 +110,7 @@ void addStuffInInventory()
     cout << "Enter Item Price: ";
     cin >> price;
 
-    ofstream file("data.txt", ios::app);
+    fstream file("list.txt", ios::app);
     if (file)
     {
         file << category << "," << item << "," << price << "\n";
@@ -125,7 +125,8 @@ void addStuffInInventory()
 
 void loadData(string names[], int prices[], string itemCats[], int& count, string categories[], int catCounts[], int& categoryCount)
 {
-    ifstream file("data.txt");
+    fstream file;
+    file.open("list.exe", ios::in);
     if (!file)
         return;
 
@@ -180,7 +181,7 @@ void loadData(string names[], int prices[], string itemCats[], int& count, strin
 
         names[count] = itm;
         itemCats[count] = cat;
-        
+
         int p = 0;
         for (int i = 0; i < prcStr.length(); i++)
         {
@@ -206,11 +207,11 @@ void viewItems(string names[], int prices[], string itemCats[], int count, strin
     }
 
     cout << "\n--- Inventory List ---" << endl;
-    
+
     for (int c = 0; c < categoryCount; c++)
     {
         cout << "[" << categories[c] << "] - Total Items: " << catCounts[c] << endl;
-        
+
         for (int i = 0; i < count; i++)
         {
             if (itemCats[i] == categories[c])
