@@ -126,7 +126,7 @@ void addStuffInInventory()
 void loadData(string names[], int prices[], string itemCats[], int& count, string categories[], int catCounts[], int& categoryCount)
 {
     fstream file;
-    file.open("list.exe", ios::in);
+    file.open("list.txt", ios::in);
     if (!file)
         return;
 
